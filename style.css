@@ -1,0 +1,168 @@
+/*  */
+
+body {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background: url("img2.jpg") no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.turt {
+
+    position: relative;
+    width: 100px;
+    --x: 0px;
+    --y: 0px;
+    --rotateX: 0;
+    --rotate: 0;
+        /* ✅ Apply rotation and flipping */
+        transform: rotateY(var(--rotateX)) rotate(var(--rotate));
+        transition: transform 0.2s ease-in-out;
+    
+
+    /* transform: translateX(var(--x)) translateY(var(--y)) rotateY(var(--rotateX)) rotate(var(--rotate));
+    transition: transform 0.5s; */
+}
+
+.perry {
+    width: 10px;
+    /* Decreased width */
+    height: 10px;
+    /* Decreased height */
+    background-color: #068692;
+    /* Perry's teal color */
+    border: 3px solid #005f6b;
+    /* Darker teal border */
+    border-radius: 5px;
+    position: relative;
+}
+
+
+#board {
+    background: linear-gradient(rgb(26, 191, 153), rgb(0, 245, 237));
+    width: 90vmin;
+    height: 92vmin;
+    border: 2px solid rgb(23, 23, 23);
+    display: grid;
+    grid-template-rows: repeat(18, 1fr);
+    grid-template-columns: repeat(18, 1fr);
+    position: relative;
+    overflow: hidden;
+}
+
+.trunk {
+    width: 5px;
+    /* Decreased width */
+    height: 40px;
+    /* Decreased height */
+    background-color: #1a0909;
+    /* Perry's teal color */
+    border: 3px solid #000000;
+    /* Darker teal border */
+    border-radius: 2px;
+    position: absolute;
+    /* left: 50%; */
+    transform: translateX(-50%);
+    animation: moveUp 6s linear forwards;
+
+
+
+
+}
+
+/* @keyframes moveUp{
+    0%{
+        transform:translateY(0);
+        bottom: -100px; 
+    
+    }
+    100%{
+        transform:translateY(-100vh)
+        
+    }
+} */
+
+@keyframes moveUp {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-600px);
+        /* Moves up out of the board */
+    }
+}
+
+.food {
+    width: 10px;
+    height: 10px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    position: relative;
+}
+
+#scoreBoard {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+#hi{
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.turtle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: green;
+    border-radius: 50%;
+
+    position: relative;
+    --x: 0px;
+    --y: 0px;
+    --rotateX: 0;
+    --rotate: 0;
+    transform: translateX(var(--x)) translateY(var(--y)) rotateY(var(--rotateX)) rotate(var(--rotate));
+    transition: transform 0.2s;
+
+}
+
+.eye {
+    position: absolute;
+
+    top: var(--eye-top, 15px);
+    left: var(--eye-left, 15px);
+    
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    transition: top 0.2s ease-in-out, left 0.2s ease-in-out;
+}
+
+.eye::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 4px;
+    height: 4px;
+    background: black;
+    border-radius: 50%;
+}
